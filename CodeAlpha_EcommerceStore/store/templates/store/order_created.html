@@ -1,0 +1,12 @@
+{% extends "store/base.html" %}
+{% block title %}Order Confirmed{% endblock %}
+
+{% block content %}
+<div class="order-confirmation">
+    <h1>✅ Thank you! Your order has been placed.</h1>
+    <p>Order <strong>#{{ order.id }}</strong> is now <strong>{{ order.status }}</strong>.</p>
+    <p>We'll ship it to: {{ order.address }}, {{ order.city }}, {{ order.postal_code }}</p>
+    <a href="{% url 'order_history' %}" class="btn">View My Orders</a>
+    <a href="{% url 'product_list' %}" class="btn btn-secondary">Continue Shopping</a>
+</div>
+{% endblock %}
